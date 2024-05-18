@@ -21,8 +21,10 @@ public class BagMain {
 		stuff.add("Name");
 		stuff.add(1999.9999);
 		
+		
 		// Counting word frequencies
         HashMap<Object, Integer> countStuff = new HashMap<>();
+        
         for (Object thing : stuff) {
             countStuff.put(thing, countStuff.getOrDefault(thing, 0) + 1);
         }
@@ -30,10 +32,11 @@ public class BagMain {
         // Printing word counts
         System.out.println("Stuff in Bag");
         countStuff.forEach((key, value) -> System.out.println(key + ": " + value));
+        
+        stuff.remove("Name");		
 		
-		stuff.clear();
-//		stuff.remove("Name");
-
+        countStuff.clear();
+        
         for (Object thing : stuff) {
             countStuff.put(thing, countStuff.getOrDefault(thing, 0) + 1);
         }
@@ -41,5 +44,6 @@ public class BagMain {
         System.out.println("\nModified Stuff in Bag");
         countStuff.forEach((key, value) -> System.out.println(key + ": " + value));
         
+        stuff.clear();
 	}
 }

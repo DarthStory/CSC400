@@ -3,18 +3,24 @@ package bag;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-class Bag<object> implements Iterable<object> {
-    private ArrayList<object> items = new ArrayList<>();
+class Bag<T> implements Iterable<T> {
+    private ArrayList<T> items = new ArrayList<>();
 
-    public void add(object item) {
+    public void add(T item) {
         items.add(item);
     }
 
-    public void remove(object item) {
-    	items.remove(item);
+    public void remove(T item) {
+    	Iterator<T> one = items.iterator();
+    	while(one.hasNext()) {
+    		if(one.next().equals(item)) {
+    			one.remove();
+    			return;
+    		}
+    	}
     }
-    public boolean contanins() {
-        return items.contains(items);
+    public boolean contains(T item) {
+        return items.contains(item);
     }
 
     public int size() {
@@ -26,7 +32,7 @@ class Bag<object> implements Iterable<object> {
     }
 
     @Override
-    public Iterator<object> iterator() {
+    public Iterator<T> iterator() {
         return items.iterator();
     }
 }
