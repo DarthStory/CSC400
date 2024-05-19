@@ -19,7 +19,15 @@ class Bag<T> implements Iterable<T> {
     		}
     	}
     }
-
+//    public boolean contains(T item) {
+//        for(T currentItem : items) {
+//        	if (currentItem.equals(item)) {
+//        		return true;
+//        	}
+//        }
+//		return false;
+//    }
+    
     public boolean contains(T item) {
     	Iterator<T> contain = items.iterator();
     	while(contain.hasNext()) {
@@ -29,6 +37,16 @@ class Bag<T> implements Iterable<T> {
     	}
     	return false;
     }
+    
+//    public int count(T item) {
+//    	int count = 0;
+//    	for (T currentItem : items) {
+//    		if (currentItem.equals(item)) {
+//    			count++;
+//    		}
+//    	}
+//    	return count;
+//    }
     
     public int count(T item) {
     	int count = 0;
