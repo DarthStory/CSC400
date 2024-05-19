@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 class Bag<T> implements Iterable<T> {
+	
+	/*
+	 * Bag class that implements the Iterable method to get through the array. 
+	 * add method was the most simple and has been used a lot in previous assignments
+	 * 
+	 * Working with the Iterator method was at first hard to get what was going on
+	 * except that it was moving through the array. I did come to understand each part
+	 * I used it to work with all of the methods that I have to modify the Bag. It also
+	 * made the code really nice and clean. 
+	 */
     private ArrayList<T> items = new ArrayList<>();
 
     public void add(T item) {

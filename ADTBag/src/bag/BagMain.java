@@ -4,6 +4,11 @@ public class BagMain {
 
 	public static void main(String[] args) {
 		
+		/*
+		 * Main method that input data, then used methods in the Bag to 
+		 * manipulate the data. 
+		 */
+		
 		Bag<Object> stuff = new Bag<>();
 		
 		stuff.add("Name");
