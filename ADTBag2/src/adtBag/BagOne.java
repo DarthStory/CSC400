@@ -62,6 +62,11 @@ class BagOne<T> implements Iterable<T> {
      * through an array. 2 of them are here: "distinct" and the ones above. There is
      * another way where you use a loop (i = 0; i < array.lenght; i++) or something along
      * these lines. For consistency, I tried to keep them as much similar as possible. 
+     * 
+     * I also seem to understand that a "Set" as it states in our course work, cannot
+     * take duplicates. This seems to actually be "forces". Below when I created a "Set"
+     * it only allowed unique items, so when I transfered them to the "distinctBag" 
+     * there were not duplicates. This seems a way to eliminate duplicates if wanted. 
      */
     
     public void merge(BagOne<T> otherItems) {
