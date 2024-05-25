@@ -57,6 +57,11 @@ class BagOne<T> implements Iterable<T> {
      * Added Size, merge and distinct methods
      * 
      * Also added toString to be able to print out the contents of the bags
+     * 
+     * Iteration is "simple" yet suddenly complex. I have found now 3 ways to iterate
+     * through an array. 2 of them are here: "distinct" and the ones above. There is
+     * another way where you use a loop (i = 0; i < array.lenght; i++) or something along
+     * these lines. For consistency, I tried to keep them as much similar as possible. 
      */
     
     public void merge(BagOne<T> otherItems) {
