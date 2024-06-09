@@ -16,12 +16,12 @@ public class PostfixCalculator {
 			// if character is a number, push it to the stack
 				if(Character.isDigit(c)) {
 					stack.push(c - '0');
-				}else {
-				// if an operator, then pop elements and apply operator
-				int num1 = stack.pop();
-				int num2 = stack.pop();
+			}else {
+			// if an operator, then pop elements and apply operator
+			int num1 = stack.pop();
+			int num2 = stack.pop();
 				
-				System.out.println("Popped from stack: " + num1 + ", " + num2); // debug
+			System.out.println("Popped from stack: " + num1 + ", " + num2); // debug
 				
 				switch(c) {
 				case '+':
@@ -49,13 +49,10 @@ public class PostfixCalculator {
 					}
 					stack.push(num1 % num2);
 					System.out.println("Performed modulus: " + num1 + " % " + num2); // Debug print
-                    break;
+	                   break;
 				}
-		}
-		if(stack.size() != 1) {
-			throw new IllegalArgumentException("Error: Invalid postfix expression, stack size is " + stack.size());
+			}
 		}
 		return stack.pop();
-		}
 	}
 }
