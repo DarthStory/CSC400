@@ -47,12 +47,14 @@ public class MainPostFixCalc {
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
         }
+        
+        // read file call to method
         FileReadExample(calculator);
     }
 
 //    private static void FileReadExample() {
 //    }
-
+    // reads file
     private static void FileReadExample(PostfixCalculator calculator) {
             Path filePath = Paths.get("C:\\Temp\\Postfix.txt");
             try {

@@ -3,6 +3,19 @@ package postFix;
 import java.util.Stack;
 
 public class PostfixCalculator {
+	
+	/*
+	 * I had 2 different ways to try to attempt to do "multi-digit operands". 
+	 * They both failed as soon as I hit a operand. I could not know how when manually putting
+	 * in the postfix notation instead of asking for each number somehow, how it could tell if I 
+	 * wanted "2233" to be "223 and 3", "22 and 33" or "1 and 233".. The only way I found was to
+	 * put a space between the numbers, but it errored out when it saw the space. I thought that I was just
+	 * being extra trying to get numbers over a single digit long as none of the examples had multi-digits 
+	 * in them. I will have to work on this for the final to figure it out. I hope you can give me some 
+	 * insight as to what to do here. I would put the example here but it basically modified the whole first 
+	 * if statement and also added an else if. There would be a lot of text and it would be hard to read. 
+	 */
+	
 
     // Method to evaluate the expression
     public int evaluatePostfix(String expression) {
