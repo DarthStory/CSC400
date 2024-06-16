@@ -2,6 +2,7 @@ package bag;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 class Bag<T> implements Iterable<T> {
 	
@@ -54,5 +55,14 @@ class Bag<T> implements Iterable<T> {
     @Override
     public Iterator<T> iterator() {
         return items.iterator();
+    }
+    
+    //Getters and setters for the items array. 
+    public List<T> getItems() {
+    	return new ArrayList<>(items);
+    }
+    
+    public void setItems(List<T> items) {
+    	this.items = new ArrayList<>(items);
     }
 }

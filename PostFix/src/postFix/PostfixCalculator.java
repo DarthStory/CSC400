@@ -1,5 +1,6 @@
 package postFix;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class PostfixCalculator {
@@ -21,15 +22,31 @@ public class PostfixCalculator {
     public int evaluatePostfix(String expression) {
         // first Implement the stack
         Stack<Integer> stack = new Stack<>();
+        
+        StringBuilder numberBuffer = new StringBuilder();
 
         // create a for loop to go through the expression
         for(int i = 0; i < expression.length(); i++) {
             char c = expression.charAt(i);
-
-            // if character is a number, push it to the stack
+            
             if(Character.isDigit(c)) {
-                stack.push(c - '0');
+            	numberBuffer.append(c);
+            
+            }else if(c == ' ') {
+            	if(numberBuffer.length() > 0) {
+            		stack.push(Integer.parseInt(numberBuffer.toString()));
+            		numberBuffer.setLength(0);
+            	}
             }else {
+            	
+            	if(numberBuffer.length() > 0) {
+            		stack.push(Integer.parseInt(numberBuffer.toString()));
+            		numberBuffer.setLength(0);
+            }
+            	if(stack.size() < 2) {
+            		throw new EmptyStackException();
+            	}
+
                 // if an operator, then pop elements and apply operator
                 int num1 = stack.pop();
                 int num2 = stack.pop();
@@ -63,8 +80,17 @@ public class PostfixCalculator {
                         stack.push(num1 % num2);
                         System.out.println("Performed modulus: " + num1 + " % " + num2); // Debug print
                         break;
+                    default:
+                    	throw new IllegalArgumentException("Invalid operator: " + c);
                 }
             }
+        }
+        if(numberBuffer.length() > 0) {
+        	stack.push(Integer.parseInt(numberBuffer.toString()));
+        }
+        
+        if(stack.size()!= 1) {
+        	throw new EmptyStackException();
         }
         return stack.pop();
     }

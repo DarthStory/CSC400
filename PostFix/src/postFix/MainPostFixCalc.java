@@ -15,34 +15,38 @@ public class MainPostFixCalc {
 
         // Adds strings and tries to evaluate the string to run the calculation
         // If it fails, it lets you know.
-        try {
-            String input1 = "23*3*";
+        String input1 = "23 3 * 3 *";
+        String input2 = "5 3 + 7 *";
+        String input3 = "4 2 * +";
+        String input4 = "3 4 + 6 *";
+        String input5 = "2 3 +";
+        
+        System.out.println(input1);
+        try {            
             System.out.println("The answer of " + input1 + " is: " + calculator.evaluatePostfix(input1) + "\n");
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
         }
-        try {
-            String input2 = "53+7";
+        System.out.println(input2);
+        try {            
             System.out.println("The answer of " + input2 + " is: " + calculator.evaluatePostfix(input2) + "\n");
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
         }
-
-        try {
-            String input3 = "42*+";
+        System.out.println(input3);
+        try {            
             System.out.println("The answer of " + input3 + " is: " + calculator.evaluatePostfix(input3) + "\n");
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
         }
-
-        try {
-            String input4 = "34+6*";
+        System.out.println(input4);
+        try {            
             System.out.println("The answer of " + input4 + " is: " + calculator.evaluatePostfix(input4) + "\n");
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
         }
-        try {
-            String input5 = "23+";
+        System.out.println(input5);
+        try {            
             System.out.println("The answer of " + input5 + " is: " + calculator.evaluatePostfix(input5) + "\n");
         } catch (EmptyStackException e) {
             System.out.println("This is not proper Postfix notation" + e.getMessage() + "\n");
@@ -60,8 +64,12 @@ public class MainPostFixCalc {
             try {
                 List<String> lines = Files.readAllLines(filePath);
                 for (String line : lines) {
-                   //System.out.println(line);
-                    System.out.println("The answer of " + line + " is: " + calculator.evaluatePostfix(line) + "\n");
+                   System.out.println(line);
+                	try {
+                		System.out.println("The answer of " + line + " is: " + calculator.evaluatePostfix(line) + "\n");
+                	}catch(Exception e) {
+                		System.out.println("This is not proper Postfix notation: " + e.getMessage() +"\n");
+                	}
                 }
             } catch (IOException e) {
                 e.printStackTrace();
