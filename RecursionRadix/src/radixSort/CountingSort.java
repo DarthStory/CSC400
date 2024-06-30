@@ -34,9 +34,12 @@ public class CountingSort {
 	 * After each iteration through the array, it sorts according to that number. Once it has gone 
 	 * through each place 10s,100s,1000s, etc., the loop will stop and it will copy the count array
 	 * to the output array. 
+	 * 
+	 * Total time complexity = O(n)
 	 */
 	
 	private static int getMax(int[] array) {
+		// Getting Max of a constant array.
 		int max = array[0];
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] > max)
@@ -50,7 +53,9 @@ public class CountingSort {
 		int[] output = new int[n];
 		int[] count = new int[10];
 		Arrays.fill(count, 0);
-	
+		
+		// this iterates through the array, no nested loops so it directly correlates with 
+		//how many values are in the array O(n)
 		for (int i = 0; i < n; i++)
 			count[(array[i] / exp) %10]++;
 	
@@ -65,7 +70,7 @@ public class CountingSort {
 	
 	public static void radixSort(int[] array) {
 		
-		int max = getMax(array);
+		int max = getMax(array); // Getting Max is O(n) as the size is constant [10]
 		for(int exp = 1; max / exp > 0; exp *= 10)
 			countingSort(array, exp);
 	}
