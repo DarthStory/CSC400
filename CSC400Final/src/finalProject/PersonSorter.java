@@ -8,8 +8,32 @@ public class PersonSorter {
 		
 		Scanner scnr = new Scanner(System.in);
 		Queue queue = new Queue();
-		Person person = new Person();
 
+		for(int i = 0; i < 5; i++) {
+			System.out.println("Enter the First name: ");
+			String firstName = scnr.nextLine();
+			System.out.println("Enter the Last name: ");
+			String lastName = scnr.nextLine();
+			System.out.println("Enter in the age: ");
+			int age = Integer.parseInt(scnr.nextLine());
+			
+			Person person = new Person(firstName, lastName, age);
+			queue.enqueue(person);
+		}
+		
+		System.out.println("\nQueue before sorting: ");
+		queue.display();
+		
+		queue.lastNameDescending();
+		System.out.println("\nQueue after sorting by last name descending: ");
+		queue.display();
+		
+		queue.ageDescending();
+		System.out.println("\nQueue after sorting by age descending: ");
+		queue.display();
+		
+		scnr.close();
+		
 	}
 
 }

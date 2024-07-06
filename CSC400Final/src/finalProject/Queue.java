@@ -37,7 +37,7 @@ public class Queue {
         int i = (left - 1);
 
         for (int j = left; j < right; j++) {
-            if (comparator.compare(list.get(j), pivot) > 0) {
+            if (comparator.compare(list.get(j), pivot) <= 0) {
                 i++;
                 Person temp = list.get(i);
                 list.set(i, list.get(j));
@@ -52,9 +52,16 @@ public class Queue {
     }
     
     public void lastNameDescending() {
-    	quickSort(queue, 0, queue.size() -1, (p1, p2) -> p2.lastName.compareTo(p1.lastName));
+    	// compareTo as you are comparing strings
+    	// using the queue, start at 0 then progress through the size -1, being you start at 0 not 1
+    	// then compareTo p2 to p1, quickSort
+    	quickSort(queue, 0, queue.size() -1, (p1, p2) -> p2.getLastName().compareTo(p1.getLastName()));
     }
 	
-    public void 
+    public void ageDescending() {
+    	// You have to use the full name of Integer, and compare not compareTo, more
+    	//simple to compare Integers
+    	quickSort(queue, 0, queue.size() -1, (p1, p2) -> Integer.compare(p2.getAge(), p1.getAge()));
+    }
     
 }
