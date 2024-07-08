@@ -6,6 +6,9 @@ public class PersonSorter {
 
 	public static void main(String[] args) {
 		
+		/*
+		 *Needed to prompt user for input, and put it in the queue.  
+		 */
 		Scanner scnr = new Scanner(System.in);
 		Queue queue = new Queue();
 

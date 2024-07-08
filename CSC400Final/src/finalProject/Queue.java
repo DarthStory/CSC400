@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Queue {
+	
+	/*
+	 * We had the quick sort before and I was able to copy paste. This is one of the
+	 * things I like about sorting algorithms and what seems to be coding in general.
+	 * If used/written correctly, a lot can be "copy/pasted" from one program to another.
+	 * However, I had the algorithm for Ascending order.. I actually got lucky and swapped the 
+	 * ">" with "<". It makes sense because you are putting it back in a certain order because
+	 * one is greater than the other. It would make sense that comparing if it is lesser would take
+	 * it an put it in the reverse. 
+	 */
 
 	List<Person> queue;
 	

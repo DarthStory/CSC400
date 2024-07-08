@@ -1,6 +1,10 @@
 package finalProject;
 
 public class Person {
+	
+	/*
+	 * Person object
+	 */
 
 	private String firstName;
 	private String lastName;
