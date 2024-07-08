@@ -25,7 +25,7 @@ public class CustomLinkedList {
 	
 	public void delete(int data) {
 		//if no node, return null
-		//if dat matches, delete node, and make
+		//if data matches, delete node, and make
 		//next node head node
 		if (head == null) {
 			return;

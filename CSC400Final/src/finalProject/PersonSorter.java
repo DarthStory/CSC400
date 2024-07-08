@@ -19,7 +19,6 @@ public class PersonSorter {
 			String lastName = scnr.nextLine();
 			System.out.println("Enter in the age: ");
 			int age = Integer.parseInt(scnr.nextLine());
-			
 			Person person = new Person(firstName, lastName, age);
 			queue.enqueue(person);
 		}
